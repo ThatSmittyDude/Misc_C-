@@ -20,6 +20,7 @@ void printCPUInfo(){
 			 line.find("model name") != std::string::npos ||
 			 line.find("vendor_id") != std::string::npos ||
 			 line.find("microcode") != std::string::npos  ||
+			 line.find("Features")	!= std::string::npos ||
 			 line.find("flags") != std::string::npos ||
 			 line.find("address sizes") != std::string::npos) {
 			 std::cout << line << "\n" <<std::endl;
