@@ -8,15 +8,21 @@ int spl_count = 0;
 int count = 8;
 
 void printMEMinfo(){
-	std::ifstream meminfo("/var/run/dmesg.boot");
+	std::ifstream meminfo("/proc/meminfo");
 	if (!meminfo.is_open()){
-		std::cerr << "Error could not open /var/run/dmesg.boot" << std::endl;
+		std::cerr << "Error could not open /proc/meminfo" << std::endl;
 		return;
 	}
 
 	std::string line;
 	while (std::getline(meminfo, line)){
-		if 	(line.find("memory") != std::string::npos){
+		if 	(line.find("MemTotal:") != std::string::npos ||
+			 line.find("MemFree:") != std::string::npos ||
+			 line.find("Buffers:") != std::string::npos ||
+			 line.find("Cached:") != std::string::npos ||
+			 line.find("Percpu:") != std::string::npos||
+			 line.find("HardwareCorrupted:") != std::string::npos||
+			 line.find("KernelStack:") != std::string::npos){
 				std::cout << line << std::endl;
 				}
 			}
@@ -74,11 +80,13 @@ void splash(){
 }
 
 int main(){
+while(true){
 	clear_screen();
-	splash_animate();
 	splash();
-	usleep(40000);
 	printMEMinfo();
 	std::cout << "\n";
+	usleep(250000);
+}
 	return 0;
+
 }

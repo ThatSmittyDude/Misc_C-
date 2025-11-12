@@ -16,10 +16,17 @@ void printMEMinfo(){
 
 	std::string line;
 	while (std::getline(meminfo, line)){
-		if 	(line.find("MemTotal") != std::string::npos ||
-			 line.find("MemFree") != std::string::npos ||
-			 line.find("KernelStack") != std::string::npos){
-				std::cout << line << "\n" << std::endl;
+		if 	(line.find("MemTotal:") != std::string::npos ||
+			 line.find("MemFree:") != std::string::npos ||
+			// line.find("Mapped:") != std::string::npos ||
+			 line.find("Buffers:") != std::string::npos ||
+			 line.find("Cached:") != std::string::npos ||
+			 //line.find("PageTables:") != std::string::npos ||
+			 line.find("Percpu:") != std::string::npos||
+			 line.find("HardwareCorrupted:") != std::string::npos||
+			 line.find("KernelStack:") != std::string::npos){
+				std::cout << line << std::endl;
+				usleep(30000);
 				}
 			}
 		

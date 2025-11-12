@@ -11,10 +11,10 @@ int opt_count = 0;
 
 float watts, volts, amps;
 
-constexpr const char* tab = "	";
-constexpr const char* divi = "---- ---- ---- ----\n";
+ const char* tab = "	";
+ const char* divi = "---- ---- ---- ----\n";
 
-constexpr const char* spl[6] =
+ const char* spl[6] =
 	{
 	"██╗    ██╗ █████╗ ████████╗████████╗███████╗\n",
 	"██║    ██║██╔══██╗╚══██╔══╝╚══██╔══╝██╔════╝\n",
@@ -24,7 +24,7 @@ constexpr const char* spl[6] =
 	" ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝\n"
 	};
 
-constexpr const char* opt[5] =
+ const char* opt[5] =
 	{
 	"Select value to find\n",
 	"1.	Watts\n",
@@ -33,16 +33,16 @@ constexpr const char* opt[5] =
 	"Choose (1-3):	"
 	};
 
-constexpr const char* watts_disp = "Watts:";
-constexpr const char* volts_disp = "Volts:";
-constexpr const char* amps_disp = "Amps:";
+ const char* watts_disp = "Watts:";
+ const char* volts_disp = "Volts:";
+ const char* amps_disp = "Amps:";
 
-constexpr const char* watts_in = "Enter watts:";
-constexpr const char* volts_in = "Enter volts:";
-constexpr const char* amps_in = "Enter amps:";
+ const char* watts_in = "Enter watts:";
+ const char* volts_in = "Enter volts:";
+ const char* amps_in = "Enter amps:";
 
-constexpr const char* zero_err = "	**** Divide by zero error ****\n";
-constexpr const char* op_err = "	**** Invalid operation ****\n";
+ const char* zero_err = "	**** Divide by zero error ****\n";
+ const char* op_err = "	**** Invalid operation ****\n";
 
 const char* func[4] =
 	{
